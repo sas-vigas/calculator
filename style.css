@@ -1,0 +1,134 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+/* DISPLAY */
+
+.display {
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding: 10px;
+
+    overflow: hidden;
+}
+
+#expression {
+    color: #777;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+#result {
+    color: white;
+    font-size: 75px;
+    font-weight: 300;
+
+    white-space: nowrap;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    height: 80px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #333;
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: 0.1s;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+/* FUNCTION BUTTONS */
+
+.function {
+    background: #a5a5a5;
+    color: black;
+}
+
+/* OPERATORS */
+
+.operator {
+    background: #ff9500;
+    color: white;
+}
+
+.operator.active {
+    background: white;
+    color: #ff9500;
+}
+
+/* ZERO */
+
+.zero {
+    grid-column: span 2;
+
+    border-radius: 40px;
+
+    text-align: left;
+
+    padding-left: 30px;
+}
+
+/* MOBILE */
+
+@media (max-width: 450px) {
+
+    .calculator {
+        padding: 12px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+
+    button {
+        height: 75px;
+        font-size: 27px;
+    }
+
+    #result {
+        font-size: 65px;
+    }
+}
+
